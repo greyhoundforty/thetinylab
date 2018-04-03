@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: blogtinylab-app
-          image: greyhoundforty/blogtinylab:NEWTAG
+          image: greyhoundforty/blogtinylab:20180403
           ports:
             - containerPort: 80
 ---            
