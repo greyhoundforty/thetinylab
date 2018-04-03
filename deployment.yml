@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: blogtinylab-app
+  namespace: dev
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: blogtinylab-app
+    spec:
+      containers:
+        - name: blogtinylab-app
+          image: greyhoundforty/blogtinylab:1
+          ports:
+            - containerPort: 80
+apiVersion: v1
+kind: Service
+metadata:
+  name: blogtinylab-svc
+  namespace: dev
+spec:
+  selector:
+     app: blogtinylab-app
+  ports:
+   - protocol: TCP
+     port: 80apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: blogtinylab-ingress
+  namespace: dev
+spec:
+  tls:
+  - hosts:
+    - blog.tinylab.info
+    secretName: blogtinylab
+  rules:
+  - host: blog.tinylab.info
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: blogtinylab-svc
+          servicePort: 80

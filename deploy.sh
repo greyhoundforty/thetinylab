@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOCKERTAG=$(date +%Y%m%d)
-REGISTRYURL="registry.ng.bluemix.net/rtiffany"
+DOCKER_HUB_USERNAME="greyhoundforty"
 
-kubectl set image deploy/blogtinylab blogtinylab=${REGISTRYURL}/blogtinylab:${DOCKERTAG} --namespace=dev
+kubectl set image deploy/blogtinylab blogtinylab=${DOCKER_HUB_USERNAME}/blogtinylab:1 --namespace=dev
 

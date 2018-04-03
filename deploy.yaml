@@ -12,6 +12,6 @@ spec:
     spec:
       containers:
         - name: blogtinylab-app
-          image: registry.ng.bluemix.net/rtiffany/blogtinylab
+          image: greyhoundforty/blogtinylab:TAG
           ports:
             - containerPort: 80
