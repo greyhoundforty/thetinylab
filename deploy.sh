@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 DOCKERTAG=$(date +%Y%m%d)
+IBM_REGISTRY_NAMESPACE="rtiffany"
 WRKDIR="$HOME/Repositories/Personal/thetinylab"
+
+cd "$WRKDIR"
 
 kubectl apply -f deployment.yml
 
