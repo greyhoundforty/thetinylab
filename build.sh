@@ -10,8 +10,8 @@ rm -rf _site
 
 jekyll build -d _site
 
-rm -f deployment.yml
-cp base-deployment.yml deployment.yml
+#rm -f deployment.yml
+#cp base-deployment.yml deployment.yml
 
 #docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
 
@@ -19,6 +19,8 @@ docker build -t registry.ng.bluemix.net/${IBM_REGISTRY_NAMESPACE}/blogtinylab:${
 
 docker push registry.ng.bluemix.net/${IBM_REGISTRY_NAMESPACE}/blogtinylab:${DOCKERTAG}
 
-sed -i -e "s|NEWTAG|$DOCKERTAG|g" deployment.yml
+#sed -i -e "s|NEWTAG|$DOCKERTAG|g" deployment.yml
 
-bash ./deploy.sh
+#bash ./deploy.sh
+
+kubectl set image deploy/blogtinylab-app blogtinylab-app=registry.ng.bluemix.net/${IBM_REGISTRY_NAMESPACE}/blogtinylab:${DOCKERTAG}
