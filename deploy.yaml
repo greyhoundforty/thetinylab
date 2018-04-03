@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: blogtinylab-app
-  namespace: dev
 spec:
   replicas: 3
   template:
@@ -12,6 +11,6 @@ spec:
     spec:
       containers:
         - name: blogtinylab-app
-          image: greyhoundforty/blogtinylab:TAG
+          image: greyhoundforty/blogtinylab:NEWTAG
           ports:
             - containerPort: 80

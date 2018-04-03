@@ -16,4 +16,4 @@ docker build -t docker.io/${DOCKER_HUB_USERNAME}/blogtinylab:${DOCKERTAG} .
 
 docker push docker.io/${DOCKER_HUB_USERNAME}/blogtinylab:${DOCKERTAG}
 
-sed -i "s|TAG|${DOCKERTAG}|g" deployment.yml
+sed -i "s|NEWTAG|${DOCKERTAG}|g" deployment.yml

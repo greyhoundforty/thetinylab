@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: blogtinylab-ingress
-  namespace: dev
 spec:
   tls:
   - hosts:
