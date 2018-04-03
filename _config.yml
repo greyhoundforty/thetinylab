@@ -1,0 +1,16 @@
+name: the tinylab
+description: technology nonsense 
+meta_description: "mostly harmless since 1977"
+
+markdown: kramdown
+highlighter: pygments
+logo: false
+paginate: 15
+baseurl: /
+domain_name: 'https://blog.tinylab.info'
+# google_analytics: 'UA-XXXXXXXX-X'
+gems: [jekyll-paginate]
+
+# Details for the RSS feed generator
+url:            'https://blog.tinylab.info'
+author:         'Ryan Tiffany'

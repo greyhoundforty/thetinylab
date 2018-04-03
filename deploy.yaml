@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: blogtinylab-app
+  namespace: dev
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: blogtinylab-app
+    spec:
+      containers:
+        - name: blogtinylab-app
+          image: registry.ng.bluemix.net/rtiffany/blogtinylab
+          ports:
+            - containerPort: 80
